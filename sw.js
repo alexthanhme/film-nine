@@ -1,4 +1,4 @@
-const C='nine-20261124140538',L='nine-lib',P=['/','/phong-toi/'];
+const C='nine-20261126121713',L='nine-lib',P=['/','/phong-toi/'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>c.addAll([...P,'/manifest.webmanifest','/icon-192.png'])));self.skipWaiting();});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==C&&x!==L).map(x=>caches.delete(x)))).then(()=>self.clients.claim()));});
 self.addEventListener('fetch',e=>{const r=e.request;if(r.method!=='GET')return;const u=new URL(r.url);
